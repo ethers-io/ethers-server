@@ -1,0 +1,19 @@
+{
+  "name": "ethers-server",
+  "version": "0.0.1",
+  "description": "Websocket server for ethers.io.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nodejs-websocket": "1.5.0",
+    "web3": "0.15.3"
+  },
+  "author": "Richard Moore <me@ricmoo.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ethers-io/ethers-server.git"
+  },
+  "license": "MIT"
+}
