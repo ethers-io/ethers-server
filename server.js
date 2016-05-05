@@ -129,7 +129,7 @@ if (errorMessage || opts.flags.help) {
     console.log('                             config JSON for contract storage');
     console.log('');
     console.log('HTTP Options');
-    console.log('        --port PORT          port to bind the server to');
+    console.log('        --port PORT          port to bind the server to (default: 5000)');
     console.log('');
     console.log('HTTPS Options');
     console.log('        --certificate CERT   SSL certificate (PEM format)');
