@@ -1,7 +1,7 @@
 {
   "name": "ethers-server",
   "version": "0.0.1",
-  "description": "Websocket server for ethers.io.",
+  "description": "WebSocket server to expose an Ethereum node over ethers-web3.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
