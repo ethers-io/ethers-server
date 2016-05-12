@@ -114,7 +114,7 @@ if (errorMessage || opts.flags.help) {
     console.log('');
     console.log("Usage:");
     console.log("    node server.js [--help] [--version] [--debug] [--pid-file PATH]");
-    console.log("                [--port PORT] [--rpc URL] [--contracts-config PATH]");
+    console.log("                [--port PORT] [--rpc URL] [--contract-config PATH]");
     console.log("                [--certificate CERT --private-key KEY");
     console.log('                   [ --intermediate-certificate CERT ] ... ]');
     console.log('');
@@ -125,7 +125,7 @@ if (errorMessage || opts.flags.help) {
     console.log('');
     console.log('Service Options');
     console.log('        --rpc URL            url to ethereum rpc service');
-    console.log('        --contracts-config PATH');
+    console.log('        --contract-config PATH');
     console.log('                             config JSON for contract storage');
     console.log('');
     console.log('HTTP Options');
