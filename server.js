@@ -11,7 +11,7 @@ var opts = util.getopts({
     "certificate": '',
     "contract-config": '',
     "intermediate-certificate": [],
-    "rpc": "~/.ethereum/geth.ipc",
+    "rpc": "http://localhost:8545",
     "pid-file": '',
     "port": 5000,
     "private-key": '',
@@ -124,7 +124,7 @@ if (errorMessage || opts.flags.help) {
     console.log('        --pid-file PATH      path to store PID file');
     console.log('');
     console.log('Service Options');
-    console.log('        --rpc URL            url to ethereum rpc service');
+    console.log('        --rpc URL            url to rpc service (http://localhost:8545');
     console.log('        --contract-config PATH');
     console.log('                             config JSON for contract storage');
     console.log('');
@@ -136,6 +136,10 @@ if (errorMessage || opts.flags.help) {
     console.log('        --private-key KEY    SSL private key (PEM format)');
     console.log('        --intermediate-certificate CERT');
     console.log('                             SSL intermediate certificate(s) (PEM format)');
+    console.log('');
+    console.log('NOTES:');
+    console.log('   - RPC URLs may be of the forms http://localhost:8545 (default) or');
+    console.log('     ipc:/User/ricmoo/Library/Ethereum.geth.ipc');
     console.log('');
     if (errorMessage) {
         console.log('Error:', errorMessage);
