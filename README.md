@@ -26,7 +26,7 @@ Command Line Interface - ethers.io/0.0.1
 
 Usage:
     node server.js [--help] [--version] [--debug] [--pid-file PATH]
-                [--port PORT] [--rpc URL] [--contracts-config PATH]
+                [--port PORT] [--rpc URL] [--contract-config PATH]
                 [--certificate CERT --private-key KEY
                    [ --intermediate-certificate CERT ] ... ]
 
@@ -37,7 +37,7 @@ Usage:
 
 Service Options
         --rpc URL            url to ethereum rpc service
-        --contracts-config PATH
+        --contract-config PATH
                              config JSON for contract storage
 
 HTTP Options
