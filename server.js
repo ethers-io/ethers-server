@@ -10,6 +10,7 @@ var version = require('./package.json').version;
 var opts = util.getopts({
     "certificate": '',
     "contract-config": '',
+    "faucet-config": '',
     "intermediate-certificate": [],
     "rpc": "http://localhost:8545",
     "pid-file": '',
@@ -97,6 +98,18 @@ function checkOptions() {
         }
     }
 
+    if (opts.options['faucet-config']) {
+        try {
+            values.faucetPrivateKey = loadFile(opts.options['faucet-config']).toString();
+            if (!util.isHexString(values.faucetPrivateKey, 32)) {
+                throw new Error('invalid faucet private key');
+            }
+        } catch (error) {
+            values.faucetPrivateKey = '0x' + require('crypto').randomBytes(32).toString('hex');
+            fs.writeFileSync(opts.options['faucet-config'], values.faucetPrivateKey);
+        }
+    }
+
     return values;
 }
 
@@ -115,6 +128,7 @@ if (errorMessage || opts.flags.help) {
     console.log("Usage:");
     console.log("    node server.js [--help] [--version] [--debug] [--pid-file PATH]");
     console.log("                [--port PORT] [--rpc URL] [--contract-config PATH]");
+    console.log("                [--faucet-config PATH]");
     console.log("                [--certificate CERT --private-key KEY");
     console.log('                   [ --intermediate-certificate CERT ] ... ]');
     console.log('');
@@ -158,6 +172,8 @@ if (errorMessage || opts.flags.help) {
         port: values.port,
         contractConfig: values.contractConfig,
         debug: opts.flags.debug,
+
+        faucetPrivateKey: values.faucetPrivateKey,
 
         // SSL Options
         certificate: values.certificate,
