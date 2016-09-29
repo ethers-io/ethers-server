@@ -3,11 +3,11 @@
 var fs = require('fs');
 
 var Server = require('./lib/server.js');
-var util = require('./lib/util.js');
+var utils = require('./lib/utils.js');
 var version = require('./package.json').version;
 
 
-var opts = util.getopts({
+var opts = utils.getopts({
     "certificate": '',
     "contract-config": '',
     "faucet-config": '',
@@ -101,7 +101,7 @@ function checkOptions() {
     if (opts.options['faucet-config']) {
         try {
             values.faucetPrivateKey = loadFile(opts.options['faucet-config']).toString();
-            if (!util.isHexString(values.faucetPrivateKey, 32)) {
+            if (!utils.isHexString(values.faucetPrivateKey, 32)) {
                 throw new Error('invalid faucet private key');
             }
         } catch (error) {
